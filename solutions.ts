@@ -64,4 +64,31 @@ const myBook = {
   publishedYear: 2024,
 };
 const updatedBook = toggleReadStatus(myBook);
-console.log(updatedBook); // Output: { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024, isRead: true }
+// console.log(updatedBook); // Output: { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024, isRead: true }
+
+//! Create a class Person with a name and age. Then, create a subclass Student that adds a grade property. Include a method getDetails in the Student class that returns a string with the student's name, age, and grade.
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Student extends Person {
+  grade: string;
+
+  constructor(name: string, age: number, grade: string) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+  }
+}
+
+const student = new Student("Alice", 20, "A");
+// console.log(student.getDetails());
