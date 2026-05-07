@@ -35,7 +35,7 @@ const result2 = checkType(42);
 // console.log(result1); // Output: "String"
 // console.log(result2); // Output: "Number"
 
-//! Write a generic function getProperty that takes an object and a key, then returns the value of that key. Use constraints to ensure the key exists on the object.
+//! Problem 4: Get Property
 
 const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
   return obj[key];
@@ -46,7 +46,7 @@ const userName = getProperty(user, "name");
 
 // console.log(userName); // Output: "John Doe"
 
-//! Define an interface Book with properties title, author, and publishedYear. Create a function toggleReadStatus that accepts a Book object and returns a new object with an added isRead property (boolean), defaulting to true.
+//! Problem 5:
 
 interface Book {
   title: string;
@@ -66,7 +66,7 @@ const myBook = {
 const updatedBook = toggleReadStatus(myBook);
 // console.log(updatedBook); // Output: { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024, isRead: true }
 
-//! Create a class Person with a name and age. Then, create a subclass Student that adds a grade property. Include a method getDetails in the Student class that returns a string with the student's name, age, and grade.
+//! Problem 6:
 class Person {
   name: string;
   age: number;
@@ -93,7 +93,7 @@ class Student extends Person {
 const student = new Student("Alice", 20, "A");
 // console.log(student.getDetails());
 
-//! Create a function getIntersection that takes two arrays of numbers and returns a new array containing only the elements that are present in both arrays.
+//! Problem 7:
 
 const getIntersection = (arr1: number[], arr2: number[]): number[] => {
   return arr1.filter((num) => arr2.includes(num));
