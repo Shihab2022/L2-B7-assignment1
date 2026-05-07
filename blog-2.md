@@ -38,6 +38,8 @@ The most crucial step is setting "strict": true in your tsconfig.json file. This
 Generics allow functions to capture the type of their arguments so they can use that exact same type for the return value or other logic
 
 ```ts
+// use on the function
+
 function identity<T>(arg: T): T {
   return arg;
 }
@@ -45,4 +47,30 @@ function identity<T>(arg: T): T {
 let output = identity<string>("hello");
 
 let num = identity(42);
+
+// use on interface
+
+interface Box<T> {
+  content: T;
+}
+
+const stringBox: Box<string> = { content: "Books" };
+const numberBox: Box<number> = { content: 100 };
+
+//use on class
+
+class DataStore<T> {
+  private items: T[] = [];
+
+  addItem(item: T): void {
+    this.items.push(item);
+  }
+
+  getAll(): T[] {
+    return this.items;
+  }
+}
+
+const userStore = new DataStore<string>();
+userStore.addItem("Alice");
 ```
