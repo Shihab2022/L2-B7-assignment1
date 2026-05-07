@@ -92,3 +92,12 @@ class Student extends Person {
 
 const student = new Student("Alice", 20, "A");
 // console.log(student.getDetails());
+
+//! Create a function getIntersection that takes two arrays of numbers and returns a new array containing only the elements that are present in both arrays.
+
+const getIntersection = (arr1: number[], arr2: number[]): number[] => {
+  return arr1.filter((num) => arr2.includes(num));
+};
+
+const intersection = getIntersection([1, 2, 6, 3, 4], [3, 4, 5, 6]);
+// console.log(intersection); // Output: [3, 4]
